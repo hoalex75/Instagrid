@@ -12,6 +12,9 @@
 		FAD0E1F121C094DE0045703D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1EF21C094DE0045703D /* Main.storyboard */; };
 		FAD0E1F321C094DF0045703D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1F221C094DF0045703D /* Assets.xcassets */; };
 		FAD0E1F621C094DF0045703D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1F421C094DF0045703D /* LaunchScreen.storyboard */; };
+		FAD0E1FE21C096DB0045703D /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */; };
+		FAD0E20021C097360045703D /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1FF21C097360045703D /* Delm-Medium.otf */; };
+		FAD0E20421C09ACA0045703D /* InstaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0E20321C09ACA0045703D /* InstaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		FAD0E1F221C094DF0045703D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD0E1F521C094DF0045703D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD0E1F721C094DF0045703D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		FAD0E1FF21C097360045703D /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		FAD0E20321C09ACA0045703D /* InstaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,33 @@
 		FAD0E1EA21C094DE0045703D /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				FAD0E1EB21C094DE0045703D /* AppDelegate.swift */,
 				FAD0E1ED21C094DE0045703D /* ViewController.swift */,
-				FAD0E1EF21C094DE0045703D /* Main.storyboard */,
-				FAD0E1F221C094DF0045703D /* Assets.xcassets */,
-				FAD0E1F421C094DF0045703D /* LaunchScreen.storyboard */,
-				FAD0E1F721C094DF0045703D /* Info.plist */,
+				FAD0E20221C09AA30045703D /* View */,
+				FAD0E20121C099E40045703D /* Supporting Files */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		FAD0E20121C099E40045703D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0E1EB21C094DE0045703D /* AppDelegate.swift */,
+				FAD0E1F721C094DF0045703D /* Info.plist */,
+				FAD0E1F221C094DF0045703D /* Assets.xcassets */,
+				FAD0E1F421C094DF0045703D /* LaunchScreen.storyboard */,
+				FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */,
+				FAD0E1FF21C097360045703D /* Delm-Medium.otf */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAD0E20221C09AA30045703D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0E1EF21C094DE0045703D /* Main.storyboard */,
+				FAD0E20321C09ACA0045703D /* InstaView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD0E1F621C094DF0045703D /* LaunchScreen.storyboard in Resources */,
+				FAD0E20021C097360045703D /* Delm-Medium.otf in Resources */,
 				FAD0E1F321C094DF0045703D /* Assets.xcassets in Resources */,
+				FAD0E1FE21C096DB0045703D /* ThirstySoftRegular.otf in Resources */,
 				FAD0E1F121C094DE0045703D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +164,7 @@
 			files = (
 				FAD0E1EE21C094DE0045703D /* ViewController.swift in Sources */,
 				FAD0E1EC21C094DE0045703D /* AppDelegate.swift in Sources */,
+				FAD0E20421C09ACA0045703D /* InstaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 529LRG4ZS2;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 529LRG4ZS2;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
