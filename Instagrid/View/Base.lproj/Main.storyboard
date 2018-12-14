@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Delm-Medium.otf">
+            <string>Delm-Medium</string>
+        </array>
         <array key="ThirstySoftRegular.otf">
             <string>ThirstySoftRegular</string>
         </array>
@@ -20,17 +23,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw4-8U-aw7">
-                                <rect key="frame" x="166.5" y="40" width="42" height="22"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw4-8U-aw7">
+                                <rect key="frame" x="153.66666666666666" y="40" width="106.66666666666666" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="FyI-vq-rCQ"/>
+                                    <constraint firstAttribute="width" secondItem="gw4-8U-aw7" secondAttribute="height" multiplier="67:22" id="RKo-FQ-PyO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6e-mE-9DH">
-                                <rect key="frame" x="122.5" y="617" width="30" height="30"/>
+                                <rect key="frame" x="142" y="686" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="1"/>
                                 <connections>
@@ -38,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kV6-Vs-opE">
-                                <rect key="frame" x="172.5" y="617" width="30" height="30"/>
+                                <rect key="frame" x="192" y="686" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="2"/>
                                 <connections>
@@ -46,24 +53,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgU-IL-ntG">
-                                <rect key="frame" x="222.5" y="617" width="30" height="30"/>
+                                <rect key="frame" x="242" y="686" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="3"/>
                                 <connections>
                                     <action selector="didTapThree" destination="BYZ-38-t0r" eventType="touchUpInside" id="bif-vA-xIn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-2y-ADt">
-                                <rect key="frame" x="166.5" y="82" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe top to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-2y-ADt">
+                                <rect key="frame" x="127" y="95" width="160" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ewd-2y-ADt" secondAttribute="height" multiplier="32:5" id="Zmz-DW-jI7"/>
+                                    <constraint firstAttribute="height" constant="25" id="hWw-7g-o21"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-u3-ewe" customClass="InstaView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="105" width="300" height="300"/>
+                                <rect key="frame" x="57" y="122" width="300" height="300"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptySpot" translatesAutoresizingMaskIntoConstraints="NO" id="W02-U7-LGD">
-                                        <rect key="frame" x="157.5" y="15" width="127.5" height="127.5"/>
+                                        <rect key="frame" x="157.66666666666666" y="15.000000000000007" width="127.33333333333334" height="127.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="127.5" id="XNJ-KG-wxV"/>
                                             <constraint firstAttribute="width" secondItem="W02-U7-LGD" secondAttribute="height" multiplier="1:1" id="XeV-qN-C8Z"/>
@@ -71,21 +82,21 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptySpot" translatesAutoresizingMaskIntoConstraints="NO" id="BX2-e1-TCr">
-                                        <rect key="frame" x="157.5" y="157.5" width="127.5" height="127.5"/>
+                                        <rect key="frame" x="157.66666666666666" y="157.66666666666669" width="127.33333333333334" height="127.33333333333331"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BX2-e1-TCr" secondAttribute="height" multiplier="1:1" id="VwH-aq-Jw9"/>
                                             <constraint firstAttribute="height" constant="127.5" id="s2y-y6-ggB"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptySpot" translatesAutoresizingMaskIntoConstraints="NO" id="cdF-bZ-AXF">
-                                        <rect key="frame" x="15" y="157.5" width="127.5" height="127.5"/>
+                                        <rect key="frame" x="15.000000000000007" y="157.66666666666669" width="127.66666666666669" height="127.33333333333331"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cdF-bZ-AXF" secondAttribute="height" multiplier="1:1" identifier="leftBottomCornerImage" id="4Ie-aL-NBj"/>
                                             <constraint firstAttribute="height" constant="127.5" id="kWj-61-oHw"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptySpot" translatesAutoresizingMaskIntoConstraints="NO" id="91l-JX-zhN">
-                                        <rect key="frame" x="15" y="15" width="127.5" height="127.5"/>
+                                        <rect key="frame" x="15.000000000000007" y="15.000000000000007" width="127.66666666666669" height="127.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="127.5" id="gEm-IN-Q3d"/>
                                             <constraint firstAttribute="width" secondItem="91l-JX-zhN" secondAttribute="height" multiplier="1:1" id="gHB-qb-cVr"/>
