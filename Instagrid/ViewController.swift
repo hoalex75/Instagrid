@@ -17,19 +17,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func didTapOne() {
         instaView.style = .numberOne
+        selectButtonImage(buttonOne)
     }
     
     @IBAction func didTapTwo() {
         instaView.style = .numberTwo
+        selectButtonImage(buttonTwo)
     }
     
     @IBAction func didTapThree() {
         instaView.style = .numberThree
+        selectButtonImage(buttonThree)
     }
     
+    private func selectButtonImage(_ buttonSelected : UIButton){
+        let buttons : [UIButton] = [buttonOne,buttonTwo,buttonThree]
+        for button in buttons {
+            button == buttonSelected ? button.setImage(UIImage(named: "Selected"), for: .normal) : button.setImage(nil, for: .normal)
+        }
+    }
 }
 
