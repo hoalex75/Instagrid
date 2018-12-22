@@ -10,10 +10,11 @@ import UIKit
 
 class InstaView: UIView {
 
-    @IBOutlet private var leftTopCornerImage : UIImageView!
-    @IBOutlet private var rightTopCornerImage : UIImageView!
-    @IBOutlet private var leftBottomCornerImage : UIImageView!
-    @IBOutlet private var rightBottomCornerImage : UIImageView!
+    @IBOutlet var leftTopCornerImage : UIImageView!
+    @IBOutlet var rightTopCornerImage : UIImageView!
+    @IBOutlet var leftBottomCornerImage : UIImageView!
+    @IBOutlet var rightBottomCornerImage : UIImageView!
+    
     
     enum Style{
         case numberOne, numberTwo, numberThree
@@ -33,16 +34,25 @@ class InstaView: UIView {
         case .numberOne:
             rightTopCornerImage.isHidden = true
             
-            
-            leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 270, height: leftTopCornerImage.frame.height)
-            leftTopCornerImage.image = UIImage(named: "noImageWide")
+            if self.bounds.width == 300 {
+                leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 270, height: leftTopCornerImage.frame.height)
+                leftTopCornerImage.image = UIImage(named: "noImageWide")
+            } else {
+                leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 260, height: leftTopCornerImage.frame.height)
+                leftTopCornerImage.image = UIImage(named: "noImageWide")
+            }
         
         case .numberTwo:
             rightBottomCornerImage.isHidden = true
             rightTopCornerImage.isHidden = false
             
-            leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 270, height: leftBottomCornerImage.frame.height)
-            leftBottomCornerImage.image = UIImage(named: "noImageWide")
+            if self.bounds.width == 300 {
+                leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 270, height: leftBottomCornerImage.frame.height)
+                leftBottomCornerImage.image = UIImage(named: "noImageWide")
+            } else {
+                leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 260, height: leftBottomCornerImage.frame.height)
+                leftBottomCornerImage.image = UIImage(named: "noImageWide")
+            }
             
         case .numberThree:
             rightBottomCornerImage.isHidden = false
@@ -66,9 +76,15 @@ class InstaView: UIView {
             rightTopCornerImage.isHidden = false
             rightBottomCornerImage.isHidden = false
         }
+        
+        
     }
     
+    func setLeftTopCornerImage(_ img : UIImage){
+        leftTopCornerImage.image = img
+    }
     
+
     
    
 
