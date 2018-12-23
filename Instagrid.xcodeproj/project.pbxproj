@@ -43,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA09DFAC21CFA9C100ACE2C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0E1ED21C094DE0045703D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA09DFAD21CFA9DA00ACE2C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA09DFAA21CE7C1500ACE2C1 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FAD0E1DF21C094DE0045703D = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +78,10 @@
 		FAD0E1EA21C094DE0045703D /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				FAD0E1ED21C094DE0045703D /* ViewController.swift */,
+				FA09DFAD21CFA9DA00ACE2C1 /* Model */,
+				FA09DFAC21CFA9C100ACE2C1 /* Controller */,
 				FAD0E20221C09AA30045703D /* View */,
 				FAD0E20121C099E40045703D /* Supporting Files */,
-				FA09DFAA21CE7C1500ACE2C1 /* Model.swift */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";

@@ -25,6 +25,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         imagePicker.delegate = self
         addGesturesToImageViews()
+        let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
+        swipeTop.direction = .up
+        self.view.addGestureRecognizer(swipeTop)
     }
     
     deinit {
@@ -83,6 +86,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         model.imageViewSelected = viewTapped
     }
     
+    @objc func swipe( _ sender: UISwipeGestureRecognizer){
+        switch sender.direction {
+        case .up:
+            self.present(model.share(image: instaView.asImage()), animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+    
     private func addGesturesToImageViews(){
         let tapLeftTop = UITapGestureRecognizer(target: self, action: #selector(tapSomeView(_:)))
         let tapLeftBottom = UITapGestureRecognizer(target: self, action: #selector(tapSomeView(_:)))
@@ -98,6 +110,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         instaView.rightTopCornerImage.addGestureRecognizer(tapRightTop)
         instaView.rightBottomCornerImage.addGestureRecognizer(tapRightBottom)
     }
+    
+    
     
 }
 
