@@ -283,11 +283,12 @@
                         <outlet property="buttonThree" destination="EgU-IL-ntG" id="IOv-49-YpY"/>
                         <outlet property="buttonTwo" destination="kV6-Vs-opE" id="ub6-KM-HBd"/>
                         <outlet property="instaView" destination="fAX-u3-ewe" id="EtV-7P-mJq"/>
+                        <outlet property="labelSwipe" destination="ewd-2y-ADt" id="i86-La-19j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="26.25"/>
+            <point key="canvasLocation" x="70" y="27"/>
         </scene>
     </scenes>
     <resources>

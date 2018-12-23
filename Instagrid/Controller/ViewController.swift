@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var buttonOne: UIButton!
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var labelSwipe: UILabel!
     let imagePicker = UIImagePickerController()
     var model = Model(lastImagePicked : nil, imageViewSelected : nil)
     
@@ -27,6 +28,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         addGesturesToImageViews()
         let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
         swipeTop.direction = .up
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
         self.view.addGestureRecognizer(swipeTop)
     }
     
@@ -37,6 +41,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @objc func rotated() {
         let style = instaView.style
         instaView.style = style
+        switch UIDevice.current.orientation {
+        case .landscapeRight, .landscapeLeft:
+            labelSwipe.text=model.textSwipeLandscape
+        default:
+            labelSwipe.text=model.textSwipePortrait       }
     }
     
     @IBAction func didTapOne() {
@@ -69,9 +78,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("No image found")
             return
         }
-        model.imageViewSelected!.clipsToBounds = true
-        model.imageViewSelected!.contentMode = .scaleAspectFill
-        model.imageViewSelected!.image = image
+        if let imageViewOnOperate = model.imageViewSelected {
+            imageViewOnOperate.clipsToBounds = true
+            imageViewOnOperate.contentMode = .scaleAspectFill
+            imageViewOnOperate.image = image
+        }
         picker.dismiss(animated: true,completion: nil)
     }
     
@@ -89,7 +100,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @objc func swipe( _ sender: UISwipeGestureRecognizer){
         switch sender.direction {
         case .up:
-            self.present(model.share(image: instaView.asImage()), animated: true, completion: nil)
+            if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown{
+                self.present(model.share(image: instaView.asImage()), animated: true, completion: nil) }
+            else {
+                break
+            }
+        case .left:
+            if UIDevice.current.orientation == .landscapeRight || UIDevice.current.orientation == .landscapeLeft{
+                self.present(model.share(image: instaView.asImage()), animated: true, completion: nil) }
+            else {
+                break
+            }
         default:
             break
         }

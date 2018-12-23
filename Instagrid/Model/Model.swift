@@ -12,6 +12,8 @@ import UIKit
 public struct Model{
     var lastImagePicked : UIImage?
     var imageViewSelected : UIImageView?
+    let textSwipePortrait = "Swipe top to share"
+    let textSwipeLandscape = "Swipe left to share"
     
     func share(image : UIImage) -> UIActivityViewController {
         let activityViewController : UIActivityViewController = UIActivityViewController(
