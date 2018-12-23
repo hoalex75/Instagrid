@@ -20,7 +20,7 @@ class InstaView: UIView {
         case numberOne, numberTwo, numberThree
     }
     
-    var style : Style = .numberOne {
+    var style : Style = .numberThree {
         willSet {
             willStyle(style)
         }
@@ -36,10 +36,10 @@ class InstaView: UIView {
             
             if self.bounds.width == 300 {
                 leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 270, height: leftTopCornerImage.frame.height)
-                leftTopCornerImage.image = UIImage(named: "noImageWide")
+                //leftTopCornerImage.image = UIImage(named: "noImageWide")
             } else {
                 leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 260, height: leftTopCornerImage.frame.height)
-                leftTopCornerImage.image = UIImage(named: "noImageWide")
+                //leftTopCornerImage.image = UIImage(named: "noImageWide")
             }
         
         case .numberTwo:
@@ -48,10 +48,10 @@ class InstaView: UIView {
             
             if self.bounds.width == 300 {
                 leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 270, height: leftBottomCornerImage.frame.height)
-                leftBottomCornerImage.image = UIImage(named: "noImageWide")
+                //leftBottomCornerImage.image = UIImage(named: "noImageWide")
             } else {
                 leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 260, height: leftBottomCornerImage.frame.height)
-                leftBottomCornerImage.image = UIImage(named: "noImageWide")
+                //leftBottomCornerImage.image = UIImage(named: "noImageWide")
             }
             
         case .numberThree:
@@ -66,11 +66,11 @@ class InstaView: UIView {
         switch style {
         case .numberOne:
             leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: leftTopCornerImage.frame.height, height: leftTopCornerImage.frame.height)
-            leftTopCornerImage.image = UIImage(named: "emptySpot")
+            //leftTopCornerImage.image = UIImage(named: "emptySpot")
             rightTopCornerImage.isHidden = false
         case .numberTwo:
             leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: leftBottomCornerImage.frame.height, height: leftBottomCornerImage.frame.height)
-            leftBottomCornerImage.image = UIImage(named: "emptySpot")
+            //leftBottomCornerImage.image = UIImage(named: "emptySpot")
             rightBottomCornerImage.isHidden = false
         default:
             rightTopCornerImage.isHidden = false

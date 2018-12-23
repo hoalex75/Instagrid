@@ -66,6 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("No image found")
             return
         }
+        model.imageViewSelected!.clipsToBounds = true
+        model.imageViewSelected!.contentMode = .scaleAspectFill
         model.imageViewSelected!.image = image
         picker.dismiss(animated: true,completion: nil)
     }
