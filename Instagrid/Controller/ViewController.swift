@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageViewOnOperate.contentMode = .scaleAspectFill
             imageViewOnOperate.image = image
         }
-        picker.dismiss(animated: true,completion: nil)
+        picker.dismiss(animated: true,completion: readjustWidth) //{self.instaView.style = .numberOne})
     }
     
     @objc func tapSomeView(_ sender: UITapGestureRecognizer) {
@@ -132,7 +132,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         instaView.rightBottomCornerImage.addGestureRecognizer(tapRightBottom)
     }
     
-    
+    private func readjustWidth(){
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            switch instaView.style {
+            case .numberOne :
+                instaView.style = .numberOne
+            case .numberTwo :
+                instaView.style = .numberTwo
+            default :
+                break
+            }
+        }
+    }
     
 }
 
