@@ -157,6 +157,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             let tab = model.whichColor()
+            
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+                
+                self.instaView.transform = CGAffineTransform(scaleX: 0.2, y: 1.0)
+                
+            }, completion:{(true) in
+                UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+                    
+                    self.instaView.transform = .identity
+                    
+                }, completion:nil)
+            })
+            
             instaView.backgroundColor = tab[0]
             view.backgroundColor = tab[1]
         }
