@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var labelSwipe: UILabel!
     let imagePicker = UIImagePickerController()
-    var model = Model(lastImagePicked : nil, imageViewSelected : nil)
+    var model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         imagePicker.delegate = self
         addGesturesToImageViews()
-        let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
-        swipeTop.direction = .up
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
-        self.view.addGestureRecognizer(swipeTop)
+        addSwipes()
     }
     
     deinit {
@@ -143,6 +138,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 break
             }
         }
+    }
+    
+    private func addSwipes(){
+        let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
+        swipeTop.direction = .up
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        self.view.addGestureRecognizer(swipeTop)
     }
     
 }
