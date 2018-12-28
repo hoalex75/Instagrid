@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FA09DFAB21CE7C1500ACE2C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09DFAA21CE7C1500ACE2C1 /* Model.swift */; };
+		FA65DB6221D6BE3800DE5E64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA65DB6121D6BE3800DE5E64 /* Assets.xcassets */; };
 		FAD0E1EC21C094DE0045703D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0E1EB21C094DE0045703D /* AppDelegate.swift */; };
 		FAD0E1EE21C094DE0045703D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0E1ED21C094DE0045703D /* ViewController.swift */; };
 		FAD0E1F121C094DE0045703D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1EF21C094DE0045703D /* Main.storyboard */; };
-		FAD0E1F321C094DF0045703D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1F221C094DF0045703D /* Assets.xcassets */; };
 		FAD0E1F621C094DF0045703D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1F421C094DF0045703D /* LaunchScreen.storyboard */; };
 		FAD0E1FE21C096DB0045703D /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */; };
 		FAD0E20021C097360045703D /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAD0E1FF21C097360045703D /* Delm-Medium.otf */; };
@@ -20,11 +20,11 @@
 
 /* Begin PBXFileReference section */
 		FA09DFAA21CE7C1500ACE2C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FA65DB6121D6BE3800DE5E64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD0E1E821C094DE0045703D /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD0E1EB21C094DE0045703D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD0E1ED21C094DE0045703D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAD0E1F021C094DE0045703D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAD0E1F221C094DF0045703D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD0E1F521C094DF0045703D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD0E1F721C094DF0045703D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 		FAD0E20121C099E40045703D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA65DB6121D6BE3800DE5E64 /* Assets.xcassets */,
 				FAD0E1EB21C094DE0045703D /* AppDelegate.swift */,
 				FAD0E1F721C094DF0045703D /* Info.plist */,
-				FAD0E1F221C094DF0045703D /* Assets.xcassets */,
 				FAD0E1F421C094DF0045703D /* LaunchScreen.storyboard */,
 				FAD0E1FD21C096DB0045703D /* ThirstySoftRegular.otf */,
 				FAD0E1FF21C097360045703D /* Delm-Medium.otf */,
@@ -168,9 +168,9 @@
 			files = (
 				FAD0E1F621C094DF0045703D /* LaunchScreen.storyboard in Resources */,
 				FAD0E20021C097360045703D /* Delm-Medium.otf in Resources */,
-				FAD0E1F321C094DF0045703D /* Assets.xcassets in Resources */,
 				FAD0E1FE21C096DB0045703D /* ThirstySoftRegular.otf in Resources */,
 				FAD0E1F121C094DE0045703D /* Main.storyboard in Resources */,
+				FA65DB6221D6BE3800DE5E64 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

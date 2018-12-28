@@ -16,8 +16,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var labelSwipe: UILabel!
+    @IBOutlet weak var arrow: UIImageView!
     let imagePicker = UIImagePickerController()
     var model = Model()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +41,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         switch UIDevice.current.orientation {
         case .landscapeRight, .landscapeLeft:
             labelSwipe.text=model.textSwipeLandscape
+            arrow.image = UIImage(imageLiteralResourceName: "arrowLeft")
         default:
-            labelSwipe.text=model.textSwipePortrait       }
+            labelSwipe.text=model.textSwipePortrait
+            arrow.image = UIImage(imageLiteralResourceName: "arrowUp")
+        }
     }
     
     @IBAction func didTapOne() {
