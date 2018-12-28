@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,39 +9,26 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ThirstySoftRegular.otf">
-            <string>ThirstySoftRegular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconStart" translatesAutoresizingMaskIntoConstraints="NO" id="CUg-3i-oMp">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <rect key="frame" x="117" y="278" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Hb7-OT-0vu"/>
-                                    <constraint firstAttribute="height" constant="100" id="h3C-4w-lX8"/>
+                                    <constraint firstAttribute="width" secondItem="CUg-3i-oMp" secondAttribute="height" multiplier="1:1" id="MsP-9M-meC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="bOZ-xV-IWH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzY-9m-hur">
-                                <rect key="frame" x="128" y="40" width="119" height="39"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CUg-3i-oMp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9Jy-6Z-GG7"/>
-                            <constraint firstItem="uzY-9m-hur" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kbS-vF-Wcl"/>
-                            <constraint firstItem="uzY-9m-hur" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="oNc-WC-L47"/>
                             <constraint firstItem="CUg-3i-oMp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wcp-Y7-2vk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
