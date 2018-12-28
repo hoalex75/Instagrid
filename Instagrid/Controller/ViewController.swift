@@ -78,7 +78,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageViewOnOperate.contentMode = .scaleAspectFill
             imageViewOnOperate.image = image
         }
-        picker.dismiss(animated: true,completion: readjustWidth) //{self.instaView.style = .numberOne})
+        picker.dismiss(animated: true, completion: readjustWidth) //{self.instaView.style = .numberOne})
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: readjustWidth)
     }
     
     @objc func tapSomeView(_ sender: UITapGestureRecognizer) {
@@ -128,7 +132,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     private func readjustWidth(){
-        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+        let orientation = UIDevice.current.orientation
+        if orientation == .landscapeLeft || orientation == .landscapeRight {
             switch instaView.style {
             case .numberOne :
                 instaView.style = .numberOne
@@ -149,5 +154,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.addGestureRecognizer(swipeTop)
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            let tab = model.whichColor()
+            instaView.backgroundColor = tab[0]
+            view.backgroundColor = tab[1]
+        }
+    }
 }
 

@@ -14,8 +14,8 @@ public struct Model{
     var imageViewSelected : UIImageView?
     let textSwipePortrait = "Swipe top to share"
     let textSwipeLandscape = "Swipe left to share"
-    let colorCollection = ["Dark Blue" : UIColor(red: 16.0, green: 102.0, blue: 152.0, alpha: 1.0), "Light Blue" : UIColor(red: 183.0, green: 215.0, blue: 229.0, alpha: 1.0), "Dark Green" : UIColor(red: 95.0, green: 186.0, blue: 96.0, alpha: 1.0), "Light Green" : UIColor(red: 160, green: 234, blue: 152, alpha: 1.0), "Dark Red" : UIColor(red: 191, green: 21, blue: 19, alpha: 1.0), "Light Red" : UIColor(red: 239, green: 110, blue: 110, alpha: 126)]
-    var color = 0
+    private let colorCollection = ["Dark Blue" : UIColor(red: 16/255, green: 102/255, blue: 152/255, alpha: 1.0), "Light Blue" : UIColor(red: 183/255, green: 215/255, blue: 229/255, alpha: 1.0), "Dark Green" : UIColor(red: 95/255, green: 186/255, blue: 96/255, alpha: 1.0), "Light Green" : UIColor(red: 160/255, green: 234/255, blue: 152/255, alpha: 1.0), "Dark Red" : UIColor(red: 191/255, green: 21/255, blue: 19/255, alpha: 1.0), "Light Red" : UIColor(red: 239/255, green: 110/255, blue: 110/255, alpha: 1.0)]
+    private var color = 0
     
     init(){
         lastImagePicked = nil
