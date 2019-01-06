@@ -9,16 +9,11 @@
 import UIKit
 
 class InstaView: UIView {
-
+    // MARK: Properties
     @IBOutlet var leftTopCornerImage : UIImageView!
     @IBOutlet var rightTopCornerImage : UIImageView!
     @IBOutlet var leftBottomCornerImage : UIImageView!
     @IBOutlet var rightBottomCornerImage : UIImageView!
-    
-    
-    enum Style{
-        case numberOne, numberTwo, numberThree
-    }
     
     var style : Style = .numberThree {
         willSet {
@@ -29,6 +24,13 @@ class InstaView: UIView {
         }
     }
     
+    // MARK: enum Style declaration
+    enum Style{
+        case numberOne, numberTwo, numberThree
+    }
+    
+    // MARK: Functions
+    // set the differents properties of instaView according to the style given in parameters
     private func setStyle(_ style : Style){
         switch style {
         case .numberOne:
@@ -36,10 +38,8 @@ class InstaView: UIView {
             
             if self.bounds.width == 300 {
                 leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 270, height: leftTopCornerImage.frame.height)
-                //leftTopCornerImage.image = UIImage(named: "noImageWide")
             } else {
                 leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: 260, height: leftTopCornerImage.frame.height)
-                //leftTopCornerImage.image = UIImage(named: "noImageWide")
             }
         
         case .numberTwo:
@@ -48,10 +48,8 @@ class InstaView: UIView {
             
             if self.bounds.width == 300 {
                 leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 270, height: leftBottomCornerImage.frame.height)
-                //leftBottomCornerImage.image = UIImage(named: "noImageWide")
             } else {
                 leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: 260, height: leftBottomCornerImage.frame.height)
-                //leftBottomCornerImage.image = UIImage(named: "noImageWide")
             }
             
         case .numberThree:
@@ -62,15 +60,14 @@ class InstaView: UIView {
         }
     }
     
+    // reset the changes before changing of style
     private func willStyle(_ style : Style){
         switch style {
         case .numberOne:
             leftTopCornerImage.frame = CGRect(x: leftTopCornerImage.frame.origin.x, y: leftTopCornerImage.frame.origin.y, width: leftTopCornerImage.frame.height, height: leftTopCornerImage.frame.height)
-            //leftTopCornerImage.image = UIImage(named: "emptySpot")
             rightTopCornerImage.isHidden = false
         case .numberTwo:
             leftBottomCornerImage.frame = CGRect(x: leftBottomCornerImage.frame.origin.x, y: leftBottomCornerImage.frame.origin.y, width: leftBottomCornerImage.frame.height, height: leftBottomCornerImage.frame.height)
-            //leftBottomCornerImage.image = UIImage(named: "emptySpot")
             rightBottomCornerImage.isHidden = false
         default:
             rightTopCornerImage.isHidden = false
@@ -80,10 +77,7 @@ class InstaView: UIView {
         
     }
     
-    func setLeftTopCornerImage(_ img : UIImage){
-        leftTopCornerImage.image = img
-    }
-    
+    // return the instaView as an image
     func asImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
         return renderer.image { rendererContext in

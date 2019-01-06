@@ -29,12 +29,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw4-8U-aw7">
                                 <rect key="frame" x="166" y="46" width="82" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="FyI-vq-rCQ"/>
+                                    <constraint firstAttribute="height" constant="27" id="FyI-vq-rCQ">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="45"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="gw4-8U-aw7" secondAttribute="height" multiplier="67:22" id="RKo-FQ-PyO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6e-mE-9DH">
                                 <rect key="frame" x="67" y="774" width="80" height="80"/>
@@ -60,8 +65,8 @@
                                     <constraint firstAttribute="width" secondItem="ewd-2y-ADt" secondAttribute="height" multiplier="3:4" id="RJL-CS-6F3"/>
                                     <constraint firstAttribute="width" secondItem="ewd-2y-ADt" secondAttribute="height" multiplier="32:5" id="Zmz-DW-jI7"/>
                                     <constraint firstAttribute="height" constant="23" id="hWw-7g-o21">
-                                        <variation key="heightClass=compact" constant="50"/>
                                         <variation key="heightClass=compact-widthClass=compact" constant="80"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="77"/>
                                     </constraint>
                                     <constraint firstAttribute="width" secondItem="ewd-2y-ADt" secondAttribute="height" multiplier="16:9" id="tXN-Ao-3vE"/>
                                 </constraints>
@@ -86,6 +91,9 @@
                                         <include reference="RJL-CS-6F3"/>
                                         <exclude reference="tXN-Ao-3vE"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="30"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-u3-ewe" customClass="InstaView" customModule="Instagrid" customModuleProvider="target">

@@ -11,6 +11,7 @@ import Foundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // MARK: Properties
     @IBOutlet weak var instaView: InstaView!
     @IBOutlet weak var buttonOne: UIButton!
     @IBOutlet weak var buttonTwo: UIButton!
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     var model = Model()
     
-    
+    // MARK: Initialisation
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self)
     }
     
+    //function called when the device rotates
     @objc func rotated() {
         let style = instaView.style
         instaView.style = style
@@ -48,10 +50,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    //these function are called when a style button is tapped
     @IBAction func didTapOne() {
         instaView.style = .numberOne
         selectButtonImage(buttonOne)
-        
     }
     
     @IBAction func didTapTwo() {
@@ -64,6 +66,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         selectButtonImage(buttonThree)
     }
     
+    //select the style of instaView according to the selected button and add him a layer image.
     private func selectButtonImage(_ buttonSelected : UIButton){
         let buttons : [UIButton] = [buttonOne,buttonTwo,buttonThree]
         for button in buttons {
@@ -71,6 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    //function called when the imagePickerController is presented
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -78,18 +82,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("No image found")
             return
         }
+        //changing the image of the tapped imageView
         if let imageViewOnOperate = model.imageViewSelected {
             imageViewOnOperate.clipsToBounds = true
             imageViewOnOperate.contentMode = .scaleAspectFill
             imageViewOnOperate.image = image
         }
-        picker.dismiss(animated: true, completion: readjustWidth) //{self.instaView.style = .numberOne})
+        picker.dismiss(animated: true, completion: readjustWidth)
     }
     
+    // the function is called when the user cancel the picking of an image
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: readjustWidth)
     }
     
+    // presents the imagePickerController and change the imageViewSelected in the model
     @objc func tapSomeView(_ sender: UITapGestureRecognizer) {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
@@ -101,6 +108,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         model.imageViewSelected = viewTapped
     }
     
+    //called when a swipe is done
     @objc func swipe( _ sender: UISwipeGestureRecognizer){
         switch sender.direction {
         case .up:
@@ -119,7 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             break
         }
     }
-    
+    // initialize the four gestures for imageViews and authorize interaction on them
     private func addGesturesToImageViews(){
         let tapLeftTop = UITapGestureRecognizer(target: self, action: #selector(tapSomeView(_:)))
         let tapLeftBottom = UITapGestureRecognizer(target: self, action: #selector(tapSomeView(_:)))
@@ -136,6 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         instaView.rightBottomCornerImage.addGestureRecognizer(tapRightBottom)
     }
     
+    // Readjust the width of wide images in syle one and two of instaview in landscape mode
     private func readjustWidth(){
         let orientation = UIDevice.current.orientation
         if orientation == .landscapeLeft || orientation == .landscapeRight {
@@ -150,6 +159,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    //Initialize the two swipe movements
     private func addSwipes(){
         let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe(_:)))
         swipeTop.direction = .up
@@ -159,25 +169,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.addGestureRecognizer(swipeTop)
     }
     
+    // changes colors of the main view and the grid of instaView
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             let tab = model.whichColor()
-            
-            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
-                
-                self.instaView.transform = CGAffineTransform(scaleX: 0.2, y: 1.0)
-                
-            }, completion:{(true) in
-                UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
-                    
-                    self.instaView.transform = .identity
-                    
-                }, completion:nil)
-            })
-            
+            animationShaking()
             instaView.backgroundColor = tab[0]
             view.backgroundColor = tab[1]
         }
+    }
+    
+    // animates instaView fior the shake gesture
+    private func animationShaking(){
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.instaView.transform = CGAffineTransform(scaleX: 0.2, y: 1.0)
+            
+        }, completion:{(true) in
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+                
+                self.instaView.transform = .identity
+                
+            }, completion:nil)
+        })
     }
 }
 
